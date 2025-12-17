@@ -36,7 +36,7 @@ Le projet comprend :
 ## Structure du projet
 
 ai_news_assistant/
-│
+
 ├──  data/ # fichiers de données (news brutes)
 
 ├──  reports/  # rapports générés
