@@ -4,10 +4,13 @@
 - [Description du projet](#description-du-projet)
 - [Contenu du projet](#contenu-du-projet)
 - [Objectifs du projet](#objectifs-du-projet)
+- [Structure du projet](#structure-du-projet)
 - [Étapes principales](#étapes-principales)
-- [ Principaux insights](#principaux-insights)
+- [Principaux insights](#principaux-insights)
 - [Recommandations](#recommandations)
 - [Compétences utilisées](#compétences-utilisées)
+- [Résultats](#résultats)
+- [Installation et exécution](#installation-et-exécution)
 
 ## Description du projet
 
@@ -29,6 +32,30 @@ Le projet comprend :
 - Identifier les tendances principales  
 - Générer un résumé intelligent  
 - Produire un rapport automatique et lisible
+
+## Structure du projet
+
+ai_news_assistant/
+│
+├──  data/ # fichiers de données (news brutes)
+
+├──  reports/  # rapports générés
+
+├──  src/ # code source du projet
+
+│  ├── fetch_news.py # récupération des news via RSS
+
+│  ├── analyze.py  # analyse de base avec pandas
+
+│  ├── ai_summary.py  # résumé des news via IA (Groq)
+
+│  ├── report.py  # génération d'un rapport Markdown
+
+│  └── config.py # configuration (chemins, flux RSS, etc.)
+
+├──  main.py # Lancement du pipeline
+
+└──  README.md
 
 ## Étapes principales
 
@@ -63,4 +90,19 @@ Le projet comprend :
 - Intégration d’un modèle d’IA (LLM via Groq)  
 - Génération de rapports automatisés  
 - Gestion d’environnements virtuels  
+
+## Résultats
+Les fichiers générés sont :
+- data/raw_news.csv : actualités brutes récupérées depuis les flux RSS ;
+- reports/report_YYYY-MM-DD_HH-MM.md : rapport Markdown avec statistiques et résumé IA.
+
+## Installation et exécution
+
+```bash
+python -m venv venv # Créer un environnement virtuel (recommandé)
+venv\Scripts\activate # Activation
+pip install -r requirements.txt # Installer les dépendances
+pip install pandas feedparser python-dotenv requests schedule groq
+Créer un fichier `.env` à la racine du projet (non versionné dans Git) # GROQ_API_KEY=ta_cle_api_groq_ici
+python main.py # Lancer le pipeline
 
