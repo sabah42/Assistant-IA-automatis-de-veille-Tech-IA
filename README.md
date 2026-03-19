@@ -76,7 +76,8 @@ ai_news_assistant/
 3. Analyse simple des articles (statistiques et mots-clés)  
 4. Génération d’un résumé via un **LLM (modèle d’IA)** exécuté avec **Groq**  
 5. Création d’un rapport Markdown horodaté
-6. - Visualisation des données dans Power BI 
+6. Visualisation des données dans Power BI  
+   
 
 ## Principaux insights
 
