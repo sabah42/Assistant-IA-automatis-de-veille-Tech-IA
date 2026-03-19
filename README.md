@@ -14,32 +14,44 @@
 
 ## Description du projet
 
-Ce projet est un **assistant automatique de veille Tech et IA** développé en Python.  
-Il permet de récupérer des actualités, de les analyser, puis de générer un **résumé intelligent** et un **rapport automatique**.
-Le but est de montrer comment construire un **pipeline data complet**, avec une intégration simple de l’IA.
+Ce projet est un assistant automatique de veille Tech et IA développé en Python.  
+Il permet de récupérer des actualités, de les analyser, puis de générer un résumé intelligent et un rapport automatique.  
+Le projet a été enrichi avec un **dashboard interactif Power BI** permettant de visualiser les données et les tendances en temps réel.
+Le but est de montrer comment construire un pipeline data complet, avec une intégration simple de l’IA.
 
 ## Contenu du projet
 Le projet comprend :
+
 - la collecte d’actualités via des flux RSS,
 - le stockage des données dans des fichiers CSV,
 - l’analyse des articles (sources, mots-clés, volumes),
 - la génération d’un résumé intelligent via un modèle d’IA,
-- la création automatique d’un rapport Markdown.
+- la création automatique d’un rapport Markdown,
+- la création d’un **dashboard Power BI interactif** connecté aux données.
+
 
 ## Objectifs du projet
 - Automatiser la veille Tech et IA  
 - Analyser les articles collectés  
 - Identifier les tendances principales  
 - Générer un résumé intelligent  
-- Produire un rapport automatique et lisible
+- Produire un rapport automatique et lisible  
+- Visualiser les données dans un dashboard interactif  
+
 
 ## Structure du projet
 
 ai_news_assistant/
 
-├──  data/ # fichiers de données (news brutes)
+├──  dataraw_news.csv # actualités brutes
+
+│ └── dashboard_summary.csv # résumés IA journaliers (FR
 
 ├──  reports/  # rapports générés
+
+│ ├── report_YYYY-MM-DD_HH-MM.md
+
+│ └── Automated AI & Tech Trends Dashboard.pbix # dashboard Power BI
 
 ├──  src/ # code source du projet
 
@@ -64,6 +76,7 @@ ai_news_assistant/
 3. Analyse simple des articles (statistiques et mots-clés)  
 4. Génération d’un résumé via un **LLM (modèle d’IA)** exécuté avec **Groq**  
 5. Création d’un rapport Markdown horodaté
+6. - Visualisation des données dans Power BI 
 
 ## Principaux insights
 
@@ -71,7 +84,7 @@ ai_news_assistant/
 - Certaines sources publient plus fréquemment que d’autres  
 - Des mots-clés récurrents permettent d’identifier les tendances du moment  
 - Le résumé IA facilite la compréhension rapide de l’actualité  
-- Le rapport final est prêt à être consulté ou partagé 
+- Le dashboard permet une analyse visuelle dynamique (évolution, sources, géographie) 
 
 ## Recommandations
 
@@ -83,19 +96,29 @@ ai_news_assistant/
 
 ## Compétences utilisées
 
-- Python (structuration de projet, scripts)
+- Python (structuration de projet, scripts)  
 - Manipulation de données avec pandas  
 - Analyse de texte (NLP simple)  
 - Automatisation de pipelines  
 - Intégration d’un modèle d’IA (LLM via Groq)  
-- Génération de rapports automatisés  
+- Power BI (dashboard interactif)  
+- Modélisation de données (relations, mesures DAX)  
+- Visualisation de données  
 - Gestion d’environnements virtuels  
 
 ## Résultats
 Les fichiers générés sont :
-- data/raw_news.csv : actualités brutes récupérées depuis les flux RSS ;
-- reports/report_YYYY-MM-DD_HH-MM.md : rapport Markdown avec statistiques et résumé IA.
 
+- `data/raw_news.csv` : actualités brutes  
+- `data/dashboard_summary.csv` : résumés IA journaliers  
+- `reports/report_YYYY-MM-DD_HH-MM.md` : rapport Markdown  
+- `reports/Automated AI & Tech Trends Dashboard.pbix` : dashboard Power BI
+   Le dashboard permet :
+- le suivi du nombre d’articles
+- l’analyse des sources
+- la visualisation géographique
+- l’évolution temporelle
+- l’affichage d’un résumé intelligent (FR/EN)
 ## Installation et exécution
 
 ```bash
